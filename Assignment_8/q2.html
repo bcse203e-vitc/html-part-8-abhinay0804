@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+<body>
+    <form>
+        Name: <input type="text" id="name" onkeyup="validate('name', /.+/, 'Name is required')">
+        <span id="name-fb"></span><br>
+        Email: <input type="text" id="email" onkeyup="validate('email', /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'Invalid email')">
+        <span id="email-fb"></span><br>
+        Password: <input type="password" id="pwd" onkeyup="validate('pwd', /^(?=.*[A-Z])(?=.*\d).{8,}$/, 'Password must be 8+ chars, 1 uppercase, 1 number')">
+        <span id="pwd-fb"></span><br>
+        <button type="submit">Submit</button>
+        <script>
+            function validate(id, reg, msg) {
+                let inp = document.getElementById(id);
+                let fb = document.getElementById(id + "-fb");
+                if (!reg.test(inp.value)) {
+                    inp.style.borderColor = "red";
+                    fb.innerText = msg;
+                } else {
+                    inp.style.borderColor = "green";
+                    fb.innerText = "";
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

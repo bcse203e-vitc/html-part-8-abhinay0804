@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Toggle</title>
+</head>
+<body>
+    <input type="password" id="pwd">
+    <input type="checkbox" onclick="togpwd()"> Show Password
+    <script>
+        function togpwd() {
+            let pwd = document.getElementById("pwd");
+            pwd.type = pwd.type === "password" ? "text" : "password";
+        }
+    </script>
+</body>
+</html>

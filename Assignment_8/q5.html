@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Counter</title>
+</head>
+<body>
+    <textarea id="in" oninput="count()"></textarea>
+    <p>Word Count: <span id="wcount">0</span></p>
+    <script>
+        function count(){
+            let t=document.getElementById("in").value;
+            let w=t.match(/\b\w+\b/g)||[];
+            document.getElementById("wcount").innerText=w.length;
+        }
+    </script>
+</body>
+</html>

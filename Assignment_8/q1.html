@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table Generator</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            td{
+                height: 100px;
+                width: 100px;
+                border-color: black;
+            }
+        }
+        body{
+            input,button{
+                background-color: rgb(167, 139, 192);
+                border: none;
+            }
+            background-color: aquamarine;
+            label,div{
+                margin-left: 400px;
+                margin-top: 150px;
+            }
+            h1,button{
+                margin-left: 450px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Generate Table</h1>
+    <label for="ro">Enter the number of rows : </label>
+    <input id="ro" type="number" required>
+    <br><br>
+    <label for="col">Enter the number of coloumns :</label>
+    <input id="col" type="number" required>
+    <br><br>
+    <button onclick="generate()" style="margin-left: 500px;">generate</button>
+    <br>
+    <div id="tablesp" style="align-content: center;">
+    </div>
+    <script>
+        function generate(){
+            let r=parseInt(document.getElementById("ro").value);
+            let c=parseInt(document.getElementById("col").value);
+            let t=document.createElement("table");
+            t.border="1";
+            for(let i=0;i<r;i++){
+                let tr=document.createElement("tr");
+                for(let j=0;j<c;j++){
+                    let td=document.createElement("td");
+                    tr.appendChild(td);
+                }
+                t.appendChild(tr);
+            }
+            document.getElementById("tablesp").innerHTML="";
+            document.getElementById("tablesp").appendChild(t);
+        }
+    </script>
+</body>
+</html>

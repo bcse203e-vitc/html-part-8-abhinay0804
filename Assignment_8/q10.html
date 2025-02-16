@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjust font size</title>
+    <style>
+        body{
+            background-color: blanchedalmond;
+            h1{
+                margin-left: 450px;
+            }
+            button,p{
+                margin-top: 50px;
+                margin-left: 450px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Adjust Font Size</h1>
+    <p id="text">Adjust my size!</p>
+    <button onclick="as(2)">Increase</button>
+    <button onclick="as(-2)" style="margin-left: 20px;">Decrease</button>
+    <br><br>
+    <script>
+        function as(c) {
+            let para=document.getElementById("text");
+            let s=parseInt(window.getComputedStyle(para).fontSize);
+            para.style.fontSize=(s+c)+"px";
+        }
+    </script>
+</body>
+</html>

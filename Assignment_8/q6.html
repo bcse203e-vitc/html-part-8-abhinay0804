@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digital Clock</title>
+    <style>
+        body{
+            align-content: center;
+            justify-content: center;
+            background-color: rgb(151, 201, 201);
+            div{
+                margin-top: 200px;
+                margin-left: 100px;
+                margin-right: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="clk" style="text-align: center;"></div>
+    <script>
+        function upclock(){
+            document.getElementById("clk").innerText=new Date().toLocaleTimeString();
+        }
+        setInterval(upclock,1000);
+    </script>
+</body>
+</html>

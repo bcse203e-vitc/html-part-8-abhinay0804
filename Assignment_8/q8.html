@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock-Paper-Scissors</title>
+    <style>
+        body{
+            background-color: rgb(253, 204, 253);
+            margin-left: 50px;
+            button{
+                background-color: rgb(192, 163, 219);
+                margin-top: 100px;
+                margin-left: 100px;
+                border-radius: 100px;
+            }
+            h1,p{
+                margin-left: 400px;
+
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock-Paper-Scissors</h1>
+    <button onclick="play('Rock')" style="margin-left: 350px;">Rock</button>
+    <button onclick="play('Paper')">Paper</button>
+    <button onclick="play('Scissors')">Scissors</button>
+    <br><br>
+    <p id="res" ></p>
+    <script>
+        function play(b) {
+            let o=["Rock", "Paper", "Scissors"];
+            let a=o[Math.floor(Math.random() * 3)];
+            let res=b===a?"Draw!":
+                (b==="Rock" && a==="Scissors") || 
+                (b==="Paper" && a==="Rock") || 
+                (b==="Scissors" && a==="Paper") ? "You Win!":"You Lose!";
+            document.getElementById("res").innerText = `System chose: ${a}. ${res}`;
+        }
+    </script>
+</body>
+</html>
